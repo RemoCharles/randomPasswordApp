@@ -10,10 +10,20 @@ def index():
 
 @app.route("/generate", methods=['POST'])
 def randomP():
-  characters = 'abcdefghijklmnopqrstuvwxyz123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^*'
-  password = "".join(choice(characters) for x in range(randint(8, 16)))
+  lettersUppercase = 'abcdefghijklmnopqrstuvwxyz'
+  lettersLowercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  numbers = '123456789'
+  characters = '.!@#$%^*'
+  password1 = "".join(choice(lettersLowercase + lettersUppercase) for x in range(randint(6, 8)))
+  password2 = "".join(choice(lettersLowercase + lettersUppercase + numbers) for x in range(randint(8, 12)))
+  password3 = "".join(choice(lettersLowercase + lettersUppercase + numbers + characters) for x in range(randint(12, 18)))
   try:
-    return render_template('index.html', password=password)
+    if request.form.get("password") == "password1":
+      return render_template('index.html', password1=password1)
+    elif request.form.get("password") == "password2":
+      return render_template('index.html', password2=password2)
+    elif request.form.get("password") == "password3":
+      return render_template('index.html', password3=password3)
   except:
     return 'There was an error'
   
