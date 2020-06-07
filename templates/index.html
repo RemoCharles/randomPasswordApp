@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<h1 style="text-align: center;">Password Generator by Remo</h1>
+{% endblock %}
+
+{% block body %}
+<div style="text-align: center;" class="content">
+    <p>The password contains 8 to 16 elements.</p>
+    <p>I don't care if you don't want special characters.</p>
+    <p>Press the button to generate you password:</p>
+        <div style="text-align: center;" class="liquid">
+            <form method="POST" action="/generate">
+                <input name="generateBtn" type="submit" value="Generate" class="button">
+            </form>
+        </div>
+        <br>
+        <div style="text-align: center;" class="result">
+            <p>{{password}}</p>
+        </div>
+</div>
+{% endblock %}
