@@ -6,17 +6,23 @@
 
 {% block body %}
 <div style="text-align: center;" class="content">
-    <p>The password contains 8 to 16 elements.</p>
-    <p>I don't care if you don't want special characters.</p>
+    <p>Choose how strong the password should be.</p>
     <p>Press the button to generate you password:</p>
         <div style="text-align: center;" class="liquid">
             <form method="POST" action="/generate">
+                <input class="container" type="radio" name="password" value="password1">
+                <label class="checkbox" for="password1">Weak</label>
+                <input class="container" type="radio" name="password" value="password2" checked>
+                <label class="checkbox" for="password2">Normal</label>
+                <input class="container" type="radio" name="password" value="password3">
+                <label class="checkbox" for="password3">Strong</label><br>
+                <br>
                 <input name="generateBtn" type="submit" value="Generate" class="button">
             </form>
         </div>
         <br>
         <div style="text-align: center;" class="result">
-            <p>{{password}}</p>
+            <p>{{password1}} {{password2}} {{password3}}</p>
         </div>
 </div>
 {% endblock %}
