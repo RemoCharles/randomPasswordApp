@@ -10,8 +10,8 @@ def index():
 
 @app.route("/generate", methods=['POST'])
 def randomP():
-  lettersUppercase = 'abcdefghijklmnopqrstuvwxyz'
-  lettersLowercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  lettersLowercase = 'abcdefghijklmnopqrstuvwxyz'
+  lettersUppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   numbers = '123456789'
   characters = '.!@#$%^*'
   password1 = "".join(choice(lettersLowercase + lettersUppercase) for x in range(randint(6, 8)))
@@ -30,3 +30,4 @@ def randomP():
 
 if __name__ == "__main__":
   app.run(debug=True)
+  app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
