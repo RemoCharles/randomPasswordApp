@@ -1,27 +1,27 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<h1 style="text-align: center;">Password Generator by Remo</h1>
+
 {% endblock %}
 
 {% block body %}
 <div style="text-align: center;" class="content">
+    <h1>Password Generator by Remo</h1>
+    <br>
     <p>Choose how strong the password should be.</p>
     <p>Press the button to generate you password:</p>
-        <div style="text-align: center;" class="liquid">
-            <form method="POST" action="/generate">
-                <input class="container" type="radio" name="password" value="password1">
-                <label class="checkbox" for="password1">Weak</label>
-                <input class="container" type="radio" name="password" value="password2" checked>
-                <label class="checkbox" for="password2">Normal</label>
-                <input class="container" type="radio" name="password" value="password3">
-                <label class="checkbox" for="password3">Strong</label><br>
-                <br>
-                <input name="generateBtn" type="submit" value="Generate" class="button">
-            </form>
-        </div>
+    <form method="POST" action="/generate">
+        <input class="container" type="radio" name="password" value="password1">
+        <label class="checkbox" for="password1">Weak</label>
+        <input class="container" type="radio" name="password" value="password2" checked>
+        <label class="checkbox" for="password2">Normal</label>
+        <input class="container" type="radio" name="password" value="password3">
+        <label class="checkbox" for="password3">Strong</label><br>
         <br>
-        <div style="text-align: center;" class="result">
+        <input name="generateBtn" type="submit" value="Generate" class="button">
+        </form>
+        <br>
+        <div class="result">
             <p>{{password1}} {{password2}} {{password3}}</p>
         </div>
 </div>

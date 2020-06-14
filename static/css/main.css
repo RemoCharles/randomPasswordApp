@@ -1,6 +1,21 @@
 html {
-	border-style: solid;
-	border-color: #4E443C;
+	background-color: black;
+	margin: 0; 
+	padding: 0; 
+}
+body { 
+	margin: 0; 
+	padding: 0; 
+}
+.content {
+	width: 600px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top: 100px;
+	margin-right: auto; 
+	margin-left: auto;
+	border-radius: 15px;
+	background-color: white;
 }
 .result {
 	display: inline-block;
@@ -8,12 +23,12 @@ html {
 	background-color: #eee;
 	letter-spacing: 2px;
 	font-size: 12px;
-	padding: 10px 30px;
+	width: 280px;
+	height: 35px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0.3);
-	border-bottom-width: 3px;
 }
 .button {
 	display: inline-block;
